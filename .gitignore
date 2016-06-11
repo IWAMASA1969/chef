@@ -2,3 +2,4 @@
 /vendor/
 *.lock
 /.bundle/
+.DS_Store
