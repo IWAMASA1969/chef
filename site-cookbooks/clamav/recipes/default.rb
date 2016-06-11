@@ -22,6 +22,13 @@ template "freshclam.conf" do
   mode 0644
 end
 
+template "freshclam" do
+  path "/etc/sysconfig/freshclam"
+  owner "root"
+  group "root"
+  mode 0644
+end
+
 #service "clamd" do
 #  action [ :enable, :start ]
 #end
