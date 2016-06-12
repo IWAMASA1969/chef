@@ -36,6 +36,17 @@ template "clamscan.sh" do
   mode 0700
 end
 
+template "clamscan.exclude" do
+  path "/root/clamscan.exclude"
+  owner "root"
+  group "root"
+  mode 0644
+end
+
+file "/etc/cron.d/clamav-update" do
+  action :delete
+end
+
 #service "clamd" do
 #  action [ :enable, :start ]
 #end
