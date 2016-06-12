@@ -1,0 +1,41 @@
+#!/bin/bash
+PATH=/usr/bin:/bin
+
+# ウイルススキャン除外リスト設定
+excludelist=/root/clamscan.exclude
+if [ -s $excludelist ]; then
+for i in `cat $excludelist`
+do
+if [ $(echo "$i"|grep \/$) ]; then
+i=`echo $i|sed -e 's/^\([^ ]*\)\/$/\1/p' -e d`
+excludeopt="${excludeopt} --exclude-dir=$i"
+else
+excludeopt="${excludeopt} --exclude=$i"
+fi
+done
+fi
+
+# clamavをアップデート
+yum -y update clamav > /dev/null 2>&1
+
+# ウィルス定義ファイルを最新化
+freshclam > /dev/null
+
+# ウイルスに関するメッセージを入れる変数作成
+CLAMSCANTMP=`mktemp`
+
+# スキャン実行、ウイルスが有ったら削除、mktempで作成したファイルにメッセージを入れる
+clamscan --recursive --remove ${excludeopt} / > $CLAMSCANTMP 2>&1
+
+# ウイルスが有った場合メッセージをメール送信
+[ ! -z "$(grep FOUND$ $CLAMSCANTMP)" ] && \
+grep FOUND$ $CLAMSCANTMP | mail -s "Virus Found" qzc07405@nifty.com
+[ ! -z "$(grep FOUND$ $CLAMSCANTMP)" ] && \
+grep FOUND$ $CLAMSCANTMP | mail -s "Virus Found" mellisa.basil.thyme@docomo.ne.jp
+
+# ウイルスが無く正しく動作している場合もメール送信
+[ -z "$(grep FOUND$ $CLAMSCANTMP)" ] && \
+echo "clamscan normal end" | mail -s "Virus Not Found" qzc07405@nifty.com
+
+# メールを送ったらmktempで作成したファイルは破棄
+rm -f $CLAMSCANTMP

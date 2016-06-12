@@ -29,6 +29,13 @@ template "freshclam" do
   mode 0644
 end
 
+template "clamscan.sh" do
+  path "/etc/cron.daily/clamscan.sh"
+  owner "root"
+  group "root"
+  mode 0700
+end
+
 #service "clamd" do
 #  action [ :enable, :start ]
 #end
