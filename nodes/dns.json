@@ -1,7 +1,8 @@
 {
   "run_list": [
     "recipe[epel]",
-    "recipe[clamav]"
+    "recipe[clamav]",
+    "recipe[mailx]"
   ],
   "automatic": {
     "ipaddress": "dns"
