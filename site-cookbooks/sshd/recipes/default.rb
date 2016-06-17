@@ -10,5 +10,5 @@ template "sshd_config" do
   path "/etc/ssh/sshd_config"
   owner "root"
   group "root"
-  mode 0644
+  mode 0600
 end
