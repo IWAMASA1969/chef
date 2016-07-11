@@ -1,6 +1,8 @@
 {
   "run_list": [
-
+    "recipe[epel]",
+    "recipe[clamav]",
+    "recipe[ruby-env]"
   ],
   "automatic": {
     "ipaddress": "watson"
