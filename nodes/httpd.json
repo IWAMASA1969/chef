@@ -1,6 +1,10 @@
 {
   "run_list": [
-
+    "recipe[epel]",
+    "recipe[clamav]",
+    "recipe[mailx]",
+    "recipe[sshd]",
+    "recipe[apache]"
   ],
   "automatic": {
     "ipaddress": "httpd"
