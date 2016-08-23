@@ -100,6 +100,30 @@ ServerAdmin root@localhost
 ServerName <%= node['machinename'] %>:80
 
 #
+# processes
+#
+StartServers 12
+MinSpareServers 8
+MaxSpareServers 16
+
+#
+# max connect cliens
+#
+MaxClients 32
+
+#
+# Time out
+#
+Timeout 60
+
+#
+# Keep Alive
+#
+KeepAlive on
+MaxKeepAliveRequests 64
+KeepAliveTimeout 30
+
+#
 # Deny access to the entirety of your server's filesystem. You must
 # explicitly permit access to web content directories in other
 # <Directory> blocks below.
