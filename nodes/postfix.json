@@ -3,6 +3,7 @@
     "recipe[epel]",
     "recipe[clamav]",
     "recipe[sshd]",
+    "recipe[telnet]",
     "recipe[postfix]",
     "recipe[dovecot]"
   ],
