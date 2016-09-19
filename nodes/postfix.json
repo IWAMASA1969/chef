@@ -3,7 +3,8 @@
     "recipe[epel]",
     "recipe[clamav]",
     "recipe[sshd]",
-    "recipe[postfix]"
+    "recipe[postfix]",
+    "recipe[dovecot]"
   ],
   "automatic": {
     "ipaddress": "postfix"
