@@ -1,0 +1,12 @@
+{
+  "run_list": [
+    "recipe[epel]",
+    "recipe[clamav]",
+    "recipe[mailx]",
+    "recipe[lsof]",
+    "recipe[bind9]"
+  ],
+  "automatic": {
+    "ipaddress": "4lpic1"
+  }
+}
