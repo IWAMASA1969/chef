@@ -1,4 +1,16 @@
 {
+  "bind9" : {
+    "zone" : {
+      "type" : "master",
+      "allowtransferip": "192.168.33.49;"
+    },
+    "zone1" : {
+      "file" : "masaxyz-labo.com.zone"
+    },
+    "zone2" : {
+      "file" : "zone.31.172.in-addr.arpa"
+    }
+  },
   "run_list": [
     "recipe[epel]",
     "recipe[clamav]",
