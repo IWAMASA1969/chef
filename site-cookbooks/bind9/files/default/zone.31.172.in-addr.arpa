@@ -1,0 +1,13 @@
+$TTL 10800
+31.172.in-addr.arpa. IN SOA 4lpic1.masaxyz-labo.com. root.masaxyz-labo.com. (
+                             2016111501 ; serial
+                             10800      ; refresh ( 3 hours )
+                             3600       ; retry ( 1 hour )
+                             86400      ; expire ( 1 day )
+                             1800       ; minimum ( 30 minites )
+                         )
+
+31.172.in-addr.arpa.     IN NS  4lpic1.masaxyz-labo.com.
+1.0.31.172.in-addr.arpa. IN PTR 4lpic1.masaxyz-labo.com.
+2.0.31.172.in-addr.arpa. IN PTR web.masaxyz-labo.com.
+3.0.31.172.in-addr.arpa. IN PTR hoge.masaxyz-labo.com.
