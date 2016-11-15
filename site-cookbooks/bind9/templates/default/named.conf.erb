@@ -7,6 +7,8 @@
 // See /usr/share/doc/bind*/sample/ for example named configuration files.
 //
 
+acl internals { localhost; 192.168.33.0/24; };
+
 options {
 //	listen-on port 53 { 127.0.0.1; };
 //	listen-on-v6 port 53 { ::1; };
@@ -14,8 +16,10 @@ options {
 	dump-file 	"/var/named/data/cache_dump.db";
         statistics-file "/var/named/data/named_stats.txt";
         memstatistics-file "/var/named/data/named_mem_stats.txt";
-//	allow-query     { localhost; };
+	allow-query { internals; };
+	blackhole { 192.168.33.1; };
 	recursion yes;
+	allow-recursion { localhost; 192.168.33.49; };
 
 	dnssec-enable yes;
 	dnssec-validation yes;
@@ -46,6 +50,7 @@ zone "masaxyz-labo.com" IN {
 	allow-update { none; };
 	allow-transfer { <%= node['bind9']['zone']['allowtransferip'] %> };
 	<% when "slave" %>
+	masters { <%= node['bind9']['zone']['mastersip'] %> };
 	<% end %>
 };
 
@@ -57,6 +62,7 @@ zone "31.172.in-addr.arpa" IN {
 	allow-update { none; };
 	allow-transfer { <%= node['bind9']['zone']['allowtransferip'] %> };
 	<% when "slave" %>
+	masters { <%= node['bind9']['zone']['mastersip'] %> };
 	<% end %>
 };
 
