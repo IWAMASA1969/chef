@@ -1,0 +1,15 @@
+{
+  "ruby-env" : {
+    "user" : "vagrant",
+    "group" : "vagrant",
+    "version": "2.4.0"
+  },
+  "run_list": [
+    "recipe[epel]",
+    "recipe[clamav]",
+    "recipe[ruby-env]"
+  ],
+  "automatic": {
+    "ipaddress": "rails5"
+  }
+}
