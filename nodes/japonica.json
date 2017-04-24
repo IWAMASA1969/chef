@@ -1,0 +1,24 @@
+{
+  "bind9" : {
+    "zone" : {
+      "type" : "master",
+      "allowtransferip": "172.18.17.9;"
+    },
+    "zone1" : {
+      "file" : "masaxyz-labo.com.zone"
+    },
+    "zone2" : {
+      "file" : "zone.17.16.172.in-addr.arpa"
+    }
+  },
+  "run_list": [
+    "recipe[epel]",
+    "recipe[clamav]",
+    "recipe[mailx]",
+    "recipe[lsof]",
+    "recipe[bind9]"
+  ],
+  "automatic": {
+    "ipaddress": "japonica"
+  }
+}

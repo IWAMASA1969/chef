@@ -33,7 +33,7 @@ if node['bind9']['zone']['type'] == 'master'
     mode   '00644'
   end
 
-  cookbook_file '/var/named/zone.31.172.in-addr.arpa' do
+  cookbook_file '/var/named/zone.17.16.172.in-addr.arpa' do
     owner  'named'
     group  'named'
     mode   '00644'
