@@ -17,7 +17,7 @@ options {
         statistics-file "/var/named/data/named_stats.txt";
         memstatistics-file "/var/named/data/named_mem_stats.txt";
 	allow-query { internals; };
-	blackhole { 172.16.33.1; };
+	blackhole { 172.16.17.1; };
 	recursion yes;
 	allow-recursion { localhost; 172.16.17.0/24; };
 
@@ -54,7 +54,7 @@ zone "masaxyz-labo.com" IN {
 	<% end %>
 };
 
-zone "17.172.in-addr.arpa" IN {
+zone "17.16.172.in-addr.arpa" IN {
 	type <%= node['bind9']['zone']['type'] %>;
 	file "<%= node['bind9']['zone2']['file'] %>";
 	<% case node['bind9']['zone']['type'] %>
