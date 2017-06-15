@@ -1,0 +1,16 @@
+$TTL 10800
+masaxyz-labo.com. IN SOA japonica.bowhead.masaxyz-labo.com. root.masaxyz-labo.com. (
+                             2016111501 ; serial
+                             10800      ; refresh ( 3 hours )
+                             3600       ; retry ( 1 hour )
+                             86400      ; expire ( 1 day )
+                             1800       ; minimum ( 30 minites )
+                         )
+
+masaxyz-labo.com. IN NS    japonica.bowhead.masaxyz-labo.com.
+masaxyz-labo.com. IN MX 10 mail.masaxyz-labo.com.
+
+bowhead.masaxyz-labo.com.             IN A 172.16.17.4
+japonica.bowhead.masaxyz-labo.com.    IN A 172.16.17.8
+glacialis.bowhead.masaxyz-labo.com.   IN A 172.16.17.9
+australis.bowhead.masaxyz-labo.com.   IN A 172.16.17.10

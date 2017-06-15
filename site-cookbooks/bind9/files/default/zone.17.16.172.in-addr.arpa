@@ -1,0 +1,15 @@
+$TTL 10800
+17.16.172.in-addr.arpa. IN SOA japonica.bowhead.masaxyz-labo.com. root.masaxyz-labo.com. (
+                             2016111501 ; serial
+                             10800      ; refresh ( 3 hours )
+                             3600       ; retry ( 1 hour )
+                             86400      ; expire ( 1 day )
+                             1800       ; minimum ( 30 minites )
+                         )
+
+17.16.172.in-addr.arpa.     IN NS    japonica.bowhead.masaxyz-labo.com.
+
+4.17.16.172.in-addr.arpa.  IN PTR bowhead.masaxyz-labo.com.
+8.17.16.172.in-addr.arpa.  IN PTR japonica.bowhead.masaxyz-labo.com.
+9.17.16.172.in-addr.arpa.  IN PTR glacialis.bowhead.masaxyz-labo.com.
+10.17.16.172.in-addr.arpa. IN PTR australis.bowhead.masaxyz-labo.com.

@@ -1,0 +1,10 @@
+{
+  "run_list": [
+    "recipe[epel]",
+    "recipe[clamav]",
+    "recipe[postgresql]"
+  ],
+  "automatic": {
+    "ipaddress": "postgresql"
+  }
+}
