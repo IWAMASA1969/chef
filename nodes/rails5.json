@@ -1,13 +1,19 @@
 {
-  "ruby-env" : {
-    "user" : "vagrant",
-    "group" : "vagrant",
+  "ruby-env": {
+    "user": "vagrant",
+    "group": "vagrant",
     "version": "2.4.0"
+  },
+  "rails-env": {
+    "gemfile_home": "/vagrant",
+    "version": "5.1.0"
   },
   "run_list": [
     "recipe[epel]",
     "recipe[clamav]",
-    "recipe[ruby-env]"
+    "recipe[ruby-env]",
+    "recipe[bundler]",
+    "recipe[rails]"
   ],
   "automatic": {
     "ipaddress": "rails5"

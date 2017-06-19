@@ -49,3 +49,17 @@ execute "rbenv install #{node['ruby-env']['version']}" do
   environment 'HOME' => "/home/#{node['ruby-env']['user']}"
   not_if { File.exists?("/home/#{node['ruby-env']['user']}/.rbenv/versions/#{node['ruby-env']['version']}") }
 end
+
+execute "rbenv rehash" do
+  command "/home/#{node['ruby-env']['user']}/.rbenv/bin/rbenv rehash"
+  user node['ruby-env']['user']
+  group node['ruby-env']['group']
+  environment 'HOME' => "/home/#{node['ruby-env']['user']}"
+end
+
+execute "rbenv global #{node['ruby-env']['version']}" do
+  command "/home/#{node['ruby-env']['user']}/.rbenv/bin/rbenv global #{node['ruby-env']['version']}"
+  user node['ruby-env']['user']
+  group node['ruby-env']['group']
+  environment 'HOME' => "/home/#{node['ruby-env']['user']}"
+end

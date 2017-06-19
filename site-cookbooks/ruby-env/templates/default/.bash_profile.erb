@@ -8,5 +8,5 @@ fi
 # User specific environment and startup programs
 
 PATH=$PATH:$HOME/.local/bin:$HOME/bin
-export PATH=$HOME/.rbenv/bin:$PATH
+export PATH=$HOME/.rbenv/bin:$HOME/.rbenv/versions/<%= node['ruby-env']['version'] %>/bin:$PATH
 eval "$(rbenv init -)"
