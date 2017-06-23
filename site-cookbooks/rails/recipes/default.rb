@@ -24,4 +24,5 @@ execute "bundle install" do
   user node['ruby-env']['user']
   group node['ruby-env']['group']
   cwd node['rails-env']['gemfile_home']
+  environment 'HOME' => "/home/#{node['ruby-env']['user']}"
 end
